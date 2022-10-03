@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
+using TMPro;
+
 public class MenuManager : MonoBehaviour
 {
     public GameObject menuContainer;
     public GameObject higschoreContainer;
+
+    public TextMeshProUGUI nameField;
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,6 +22,7 @@ public class MenuManager : MonoBehaviour
         //load the main scene
         SceneManager.LoadScene(1);
         //assign name to player in data manager
+        DataManager.Instance.playerName = nameField.text;
     }
 
     public void Exit(){
